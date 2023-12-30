@@ -1,6 +1,6 @@
 $(document).ready(
     function()
-     { // Esto asegura que el codigo JS se ejecute una vez que el HTML haya sido cargado correctamente.
+     { 
     $(".custom-btn").mousedown(
         function() 
             {
@@ -14,6 +14,13 @@ $(document).ready(
           $(this).css("background-color", ""); // Restablecer el color de fondo original
         }
     );
+
+    $('.card-post').click(function()
+    {
+        var postId = $(this).data("post-id");
+        var url = "/blog/" + postId ;
+        window.location.href = url
+    })
     }
 );
 
@@ -22,11 +29,13 @@ function resizeButton() {
     const contactButton = document.querySelector('.custom-btn');
     const sizeButton = contactButton.offsetWidth; // Obtener el ancho del botón
   
-    // Ajustar el tamaño de la fuente en función del ancho del botón
-    const tamanioFuente = sizeButton * 0.1; // Puedes ajustar el factor multiplicativo según tus necesidades
+    
+    const tamanioFuente = sizeButton * 0.1; 
     contactButton.style.fontSize = tamanioFuente + 'px';
   }
   
   // Llamar a la función al cargar la página y cuando se redimensione la ventana
   window.addEventListener('DOMContentLoaded', resizeButton);
   window.addEventListener('resize', resizeButton);
+
+

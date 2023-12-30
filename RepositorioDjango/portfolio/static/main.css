@@ -11,9 +11,16 @@ body {
     cursor: pointer;
 }
 
-.card 
+.card
 {
-    color: white;
+    color: white;    
+}
+
+.card-post:hover
+{
+
+    border: 1px solid white;    
+    cursor: pointer;
 }
 
 .navbar
