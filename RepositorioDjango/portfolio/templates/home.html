@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+
+{% load static %}
+
+
+            
+
+<header class="row">
+    
+
+    <div class="col-md-8">
+        <h1>Soy Facundo Moriconi</h1>
+        <h3>Soy desarrollador de Python</h3>
+    </div>
+
+</header>
+
+<div class="row my-4 text-center">
+
+    <h3> Mis Proyectos </h3>
+
+    {% for project in projects %}
+
+    <div class="col-md-4" p-4>
+        <div class="card bg-black card-project">
+            <div class="card-body">
+
+                <h2>{{project.title}}</h2>
+                <p>{{project.description}}</p>
+                <img src="{{project.image.url}}" alt="{{project.title}}" class="img-top img-fluid">
+                
+                {% if project.url %}
+                
+                <a href="{{project.url}}">{{project.url}}</a>
+                
+                {% endif %}
+
+            </div>           
+        </div>
+    </div>
+
+    {% endfor %}
+            
+    {% endblock %}
+    
+
+</div>

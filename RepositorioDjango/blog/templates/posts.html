@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<h1>Posts</h1>
+
+{% for post in posts %}
+
+<h1>{{post.title}}</h1>
+
+<h2>{{post.date}}</h2>
+
+<p>{{post.description}}</p>
+
+<img src="{{post.image.url}}" alt="">
+
+<a href="{% url 'blog:post_detail' post.id %}">{{post.title}}</a>
+
+
+{% endfor %}
+
+{% endblock %}
+
